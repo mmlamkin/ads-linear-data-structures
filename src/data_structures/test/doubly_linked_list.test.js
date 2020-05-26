@@ -174,7 +174,7 @@ describe(DoublyLinkedList, () => {
       expect(cb.mock.calls.length).toBe(0);
     });
 
-    it('provides element, index and ll as cb args', () => {
+    it('provides element, index and dll as cb args', () => {
       const element = 'test';
       dll.insertHead(element);
 

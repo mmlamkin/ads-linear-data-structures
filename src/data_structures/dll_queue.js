@@ -8,7 +8,7 @@ class DLLQueue {
    * Create an empty queue
    */
   constructor() {
-    this.storage = new DoublyLinkedList();
+    this.linkedList = new DoublyLinkedList();
   }
 
   /**
@@ -18,7 +18,7 @@ class DLLQueue {
    * @returns {ticket} Cancellation ticket
    */
   enqueue(element) {
-    return this.storage.insertTail(element);
+    return this.linkedList.insertTail(element);
   }
 
   /**
@@ -28,7 +28,7 @@ class DLLQueue {
    * @returns Stored element
    */
   cancel(ticket) {
-    return this.storage.remove(ticket);
+    return this.linkedList.remove(ticket);
   }
 
   /**
@@ -37,7 +37,7 @@ class DLLQueue {
    * @returns Stored element
    */
   dequeue() {
-    return this.storage.removeHead();
+    return this.linkedList.removeHead();
   }
 
   /**
@@ -46,7 +46,7 @@ class DLLQueue {
    * @returns {number} Current count
    */
   count() {
-    return this.storage.count();
+    return this.linkedList.count();
   }
 
   /**
@@ -62,7 +62,7 @@ class DLLQueue {
    * @param {forEachCallback} callback Function to invoke
    */
   forEach(callback) {
-    this.storage.forEach(callback, this);
+    this.linkedList.forEach(callback, this);
   }
 }
 
